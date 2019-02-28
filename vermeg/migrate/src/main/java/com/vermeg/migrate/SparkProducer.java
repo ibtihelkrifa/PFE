@@ -13,14 +13,18 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
+import org.apache.spark.api.java.function.FilterFunction;
 import org.apache.spark.api.java.function.Function;
 import org.apache.spark.sql.*;
+import org.apache.spark.sql.types.StructType;
 import org.apache.tomcat.util.json.JSONParser;
 import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import scala.Tuple2;
 import scala.util.parsing.json.JSONObject;
+
+import javax.xml.validation.Schema;
 
 import static java.util.Arrays.asList;
 
@@ -34,23 +38,22 @@ public class SparkProducer implements Serializable {
 
 
 
-    public String GetPi(int scale) {
+    public String migrate() {
             JavaSparkContext jsc = SparkContextProvider.getContext();
-            String MYSQL_DRIVER = "com.mysql.jdbc.Driver";
-            String MYSQL_USERNAME = "root";
-            String MYSQL_PWD = "root";
-            String MYSQL_CONNECTION_URL = "jdbc:mysql://localhost:3306/migrate?user=" + MYSQL_USERNAME + "&password=" + MYSQL_PWD;
-            SQLContext sqlContext = new SQLContext(jsc);
-            DOMConfigurator.configure("src/main/resources/log4j.properties");
-            Map<String, String> options = new HashMap<>();
-            options.put("driver", MYSQL_DRIVER);
-            options.put("url", MYSQL_CONNECTION_URL);
-            options.put("dbtable", "customers");
-            DataFrame jdbcDF = sqlContext.load("jdbc", options);
-            MongoSpark.write(jdbcDF).option("collection", "test").mode("overwrite").save();
-            List<Row> customers = jdbcDF.collectAsList();
 
-        return customers.toString();
+        String MYSQL_CONNECTION_URL="jdbc:mysql://localhost:3306/migrate";
+        SQLContext sqlContext = new SQLContext(jsc);
+
+            Properties properties= new Properties();
+            properties.put("user","root");
+            properties.put("password","root");
+            DataFrame jdbcDF=sqlContext.read().jdbc(MYSQL_CONNECTION_URL,"customers",properties);
+             jdbcDF.registerTempTable("customer");
+             DataFrame c= sqlContext.sql("select id, concat(namec,' ',lastnamec),product_id from customer");
+             DataFrame c1=c.toDF("id","FullName","Product_id");
+             MongoSpark.write(c1).option("collection", "test4").mode("overwrite").save();
+             List<Row> customers = c1.collectAsList();
+             return customers.toString();
 
         }
     }

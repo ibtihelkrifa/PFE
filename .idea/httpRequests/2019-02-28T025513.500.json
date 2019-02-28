@@ -1,0 +1,7 @@
+{
+  "timestamp": "2019-02-28T13:55:13.388+0000",
+  "status": 500,
+  "error": "Internal Server Error",
+  "message": "No message available",
+  "path": "/sparkpi"
+}

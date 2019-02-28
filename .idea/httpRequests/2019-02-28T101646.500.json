@@ -1,0 +1,7 @@
+{
+  "timestamp": "2019-02-28T09:16:46.592+0000",
+  "status": 500,
+  "error": "Internal Server Error",
+  "message": "Timed out after 30000 ms while waiting to connect. Client view of cluster state is {type=UNKNOWN, servers=[{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]",
+  "path": "/sparkpi"
+}

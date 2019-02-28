@@ -1,0 +1,7 @@
+{
+  "timestamp": "2019-02-28T13:55:44.442+0000",
+  "status": 500,
+  "error": "Internal Server Error",
+  "message": "Option 'dbtable' not specified",
+  "path": "/sparkpi"
+}

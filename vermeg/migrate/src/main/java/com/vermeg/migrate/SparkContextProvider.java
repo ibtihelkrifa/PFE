@@ -1,6 +1,7 @@
 package com.vermeg.migrate;
 
 
+import org.apache.log4j.xml.DOMConfigurator;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaSparkContext;
 
@@ -35,6 +36,8 @@ public class SparkContextProvider {
     }
 
     public static JavaSparkContext getContext() {
+        DOMConfigurator.configure("src/main/resources/log4j.properties");
+
         return INSTANCE.sparkContext;
     }
 }
