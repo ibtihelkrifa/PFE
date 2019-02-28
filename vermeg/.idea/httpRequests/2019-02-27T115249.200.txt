@@ -1,0 +1,1 @@
+DBCollection{database=DB{name='betbet'}, name='collecti'}

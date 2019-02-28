@@ -1,0 +1,7 @@
+{
+  "timestamp": "2019-02-27T11:05:39.608+0000",
+  "status": 500,
+  "error": "Internal Server Error",
+  "message": "scala.Predef$.$conforms()Lscala/Predef$$less$colon$less;",
+  "path": "/sparkpi"
+}

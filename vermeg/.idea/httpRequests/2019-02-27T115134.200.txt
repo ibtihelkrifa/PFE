@@ -1,0 +1,1 @@
+DBCursor{collection=DBCollection{database=DB{name='betbet'}, name='collection1'}, find=com.mongodb.client.model.DBCollectionFindOptions@16ddb20b}

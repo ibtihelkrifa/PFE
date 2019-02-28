@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/migrate/migrate.iml" filepath="$PROJECT_DIR$/migrate/migrate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/vermeg.iml" filepath="$PROJECT_DIR$/.idea/vermeg.iml" />
+    </modules>
+  </component>
+</project>
