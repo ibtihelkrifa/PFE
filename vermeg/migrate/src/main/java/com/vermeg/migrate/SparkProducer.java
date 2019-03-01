@@ -34,26 +34,39 @@ import java.util.*;
 @Service
 public class SparkProducer implements Serializable {
 
-
-
-
-
     public String migrate() {
-            JavaSparkContext jsc = SparkContextProvider.getContext();
+        JavaSparkContext jsc = SparkContextProvider.getContext();
 
         String MYSQL_CONNECTION_URL="jdbc:mysql://localhost:3306/migrate";
+        //SparkConf sparkConf= jsc.getConf();
+     //   sparkConf.set();
+       // sparkConf.set();
+
+
         SQLContext sqlContext = new SQLContext(jsc);
 
-            Properties properties= new Properties();
+        Properties properties= new Properties();
             properties.put("user","root");
             properties.put("password","root");
             DataFrame jdbcDF=sqlContext.read().jdbc(MYSQL_CONNECTION_URL,"customers",properties);
+            DataFrame df=sqlContext.read().jdbc(MYSQL_CONNECTION_URL,"product",properties);
+            df.registerTempTable("product");
              jdbcDF.registerTempTable("customer");
-             DataFrame c= sqlContext.sql("select id, concat(namec,' ',lastnamec),product_id from customer");
-             DataFrame c1=c.toDF("id","FullName","Product_id");
-             MongoSpark.write(c1).option("collection", "test4").mode("overwrite").save();
+             DataFrame c= sqlContext.sql("select c.id, concat(c.namec,' ',c.lastnamec),p.namep from customer c, product p where c.product_id=p.id");
+             DataFrame c1=c.toDF("id","FullName","Product_name");
+             //MongoSpark.write(c1).option("collection", "test8").mode("overwrite").save();
              List<Row> customers = c1.collectAsList();
-             return customers.toString();
+               MongoSpark.write(c1).option("spark.mongodb.input.uri","mongodb://127.0.0.1/bet")
+               .option("spark.mongodb.output.uri","mongodb://127.0.0.1/bet")
+               .option("collection","test1").mode("overwrite").save();
+     /*   Map<String, String> writeOverrides = new HashMap<String, String>();
+
+        writeOverrides.put("spark.mongodb.input.uri","mongodb://127.0.0.1/bet");
+        writeOverrides.put("spark.mongodb.output.uri","mongodb://127.0.0.1/bet");
+        writeOverrides.put("collection","coll");
+        WriteConfig writeConfig = WriteConfig.create(jsc).withOptions(writeOverrides);
+        MongoSpark.save(c1,writeConfig);*/
+        return customers.toString();
 
         }
     }

@@ -1,0 +1,7 @@
+{
+  "timestamp": "2019-02-28T15:52:36.150+0000",
+  "status": 500,
+  "error": "Internal Server Error",
+  "message": "requirement failed: Invalid uri: 'bet'",
+  "path": "/sparkpi"
+}

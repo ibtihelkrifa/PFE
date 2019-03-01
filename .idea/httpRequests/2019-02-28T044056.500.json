@@ -1,0 +1,7 @@
+{
+  "timestamp": "2019-02-28T15:40:56.843+0000",
+  "status": 500,
+  "error": "Internal Server Error",
+  "message": "Missing collection name. Set via the 'spark.mongodb.output.uri' or 'spark.mongodb.output.collection' property",
+  "path": "/sparkpi"
+}
