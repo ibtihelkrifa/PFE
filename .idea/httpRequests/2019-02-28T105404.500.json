@@ -1,7 +1,0 @@
-{
-  "timestamp": "2019-02-28T09:54:04.251+0000",
-  "status": 500,
-  "error": "Internal Server Error",
-  "message": "requirement failed: The number of columns doesn't match.\nOld column names (3): id, namec, product_id\nNew column names (2): FullName, product_id",
-  "path": "/sparkpi"
-}

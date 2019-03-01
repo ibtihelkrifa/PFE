@@ -1,0 +1,7 @@
+{
+  "timestamp": "2019-03-01T10:58:50.355+0000",
+  "status": 500,
+  "error": "Internal Server Error",
+  "message": "Missing database name. Set via the 'spark.mongodb.input.uri' or 'spark.mongodb.input.database' property",
+  "path": "/sparkpi"
+}

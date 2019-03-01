@@ -1,7 +1,0 @@
-{
-  "timestamp": "2019-02-28T10:39:30.200+0000",
-  "status": 500,
-  "error": "Internal Server Error",
-  "message": "cannot resolve 'id' given input columns ;",
-  "path": "/sparkpi"
-}

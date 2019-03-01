@@ -8,6 +8,7 @@ import com.mongodb.MongoClient;
 import com.mongodb.spark.MongoSpark;
 import com.mongodb.spark.config.ReadConfig;
 import com.mongodb.spark.config.WriteConfig;
+import com.mongodb.spark.rdd.api.java.JavaMongoRDD;
 import org.apache.log4j.xml.DOMConfigurator;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
@@ -22,6 +23,7 @@ import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import scala.Tuple2;
+import scala.collection.Seq;
 import scala.util.parsing.json.JSONObject;
 
 import javax.xml.validation.Schema;
@@ -32,7 +34,7 @@ import java.io.Serializable;
 import java.util.*;
 
 @Service
-public class SparkProducer implements Serializable {
+public class SparkProducerMysql implements Serializable {
 
     public String migrate() {
         JavaSparkContext jsc = SparkContextProvider.getContext();
@@ -52,13 +54,35 @@ public class SparkProducer implements Serializable {
             DataFrame df=sqlContext.read().jdbc(MYSQL_CONNECTION_URL,"product",properties);
             df.registerTempTable("product");
              jdbcDF.registerTempTable("customer");
-             DataFrame c= sqlContext.sql("select c.id, concat(c.namec,' ',c.lastnamec),p.namep from customer c, product p where c.product_id=p.id");
-             DataFrame c1=c.toDF("id","FullName","Product_name");
+             DataFrame c= sqlContext.sql("select c.id, concat(c.namec,' ',c.lastnamec),p.id from customer c, product p where c.product_id=p.id");
+        //DataFrame c= sqlContext.sql("select c.id, concat(c.namec,' ',c.lastnamec) from customer c  ");
+        DataFrame df1=sqlContext.sql("select id,namep from product");
+             DataFrame c1=c.toDF("id","FullName","Product");
              //MongoSpark.write(c1).option("collection", "test8").mode("overwrite").save();
-             List<Row> customers = c1.collectAsList();
+          //   List<Row> df1listrow= df1.collectAsList();
+
+
+
+
+
+        List<Row> customers = c1.collectAsList();
                MongoSpark.write(c1).option("spark.mongodb.input.uri","mongodb://127.0.0.1/bet")
                .option("spark.mongodb.output.uri","mongodb://127.0.0.1/bet")
-               .option("collection","test1").mode("overwrite").save();
+               .option("collection","test3").mode("overwrite").save();
+
+
+
+        /*JavaRDD<Document> test2mod = jsc.parallelize(test2rdd.collect()).map(
+                document->document.append("product",df1.toJavaRDD().collect().get(0))
+        );
+
+
+        DataFrame dff= ((JavaMongoRDD<Document>) test2rdd).toDF();
+
+        MongoSpark.write(dff).option("spark.mongodb.input.uri","mongodb://127.0.0.1/bet")
+                .option("spark.mongodb.output.uri","mongodb://127.0.0.1/bet")
+                .option("collection","test2").mode("overwrite").save();*/
+
      /*   Map<String, String> writeOverrides = new HashMap<String, String>();
 
         writeOverrides.put("spark.mongodb.input.uri","mongodb://127.0.0.1/bet");

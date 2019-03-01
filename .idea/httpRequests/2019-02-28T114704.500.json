@@ -1,7 +1,0 @@
-{
-  "timestamp": "2019-02-28T10:47:04.361+0000",
-  "status": 500,
-  "error": "Internal Server Error",
-  "message": "Table not found: customers;",
-  "path": "/sparkpi"
-}

@@ -2,9 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea5d73c5-a28f-4a2a-b353-942dc7dc9668" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vermeg/migrate/src/main/java/com/vermeg/migrate/SparkContextProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/vermeg/migrate/src/main/java/com/vermeg/migrate/SparkContextProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2019-02-28T101505.404.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2019-02-28T101513.404.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2019-02-28T101559.500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2019-02-28T101646.500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2019-02-28T101853.200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2019-02-28T102549.200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2019-02-28T105404.500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2019-02-28T113731.500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2019-02-28T113930.500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2019-02-28T113956.500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2019-02-28T114132.500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2019-02-28T114158.500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2019-02-28T114704.500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2019-02-28T120403.200.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vermeg/migrate/src/main/java/com/vermeg/migrate/SparkProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/vermeg/migrate/src/main/java/com/vermeg/migrate/SparkProducer.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/vermeg/migrate/target/" />
@@ -74,8 +85,8 @@
       <file leaf-file-name="SparkProducer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vermeg/migrate/src/main/java/com/vermeg/migrate/SparkProducer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="55" column="62" selection-start-line="55" selection-start-column="62" selection-end-line="55" selection-end-column="62" />
+            <state relative-caret-position="319">
+              <caret line="70" column="42" selection-start-line="70" selection-start-column="42" selection-end-line="70" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -142,7 +153,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="dummy://restClient/response1.json" root0="SKIP_INSPECTION" />
+    <setting file="dummy://restClient/response35.json" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -415,12 +426,12 @@
       <option name="presentableId" value="Default" />
       <updated>1551345037424</updated>
       <workItem from="1551345039520" duration="17182000" />
-      <workItem from="1551430689655" duration="503000" />
+      <workItem from="1551430689655" duration="11341000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17544000" />
+    <option name="totallyTimeSpent" value="28523000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
@@ -577,8 +588,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vermeg/migrate/src/main/java/com/vermeg/migrate/SparkProducer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="55" column="62" selection-start-line="55" selection-start-column="62" selection-end-line="55" selection-end-column="62" />
+        <state relative-caret-position="319">
+          <caret line="70" column="42" selection-start-line="70" selection-start-column="42" selection-end-line="70" selection-end-column="42" />
         </state>
       </provider>
     </entry>

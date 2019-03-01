@@ -1,0 +1,7 @@
+{
+  "timestamp": "2019-03-01T09:36:52.414+0000",
+  "status": 500,
+  "error": "Internal Server Error",
+  "message": "Table not found: test2;",
+  "path": "/sparkpi"
+}

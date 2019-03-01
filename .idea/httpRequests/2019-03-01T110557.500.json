@@ -1,0 +1,7 @@
+{
+  "timestamp": "2019-03-01T10:05:57.926+0000",
+  "status": 500,
+  "error": "Internal Server Error",
+  "message": "cannot resolve 'p' given input columns product_id, lastnamec, id, id, namep, namec;",
+  "path": "/sparkpi"
+}
