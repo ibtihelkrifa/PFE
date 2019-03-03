@@ -1,0 +1,1 @@
+Missing database name. Set via the 'spark.mongodb.output.uri' or 'spark.mongodb.output.database' property

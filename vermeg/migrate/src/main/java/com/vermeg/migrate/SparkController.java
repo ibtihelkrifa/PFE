@@ -13,7 +13,8 @@ public class SparkController {
 
     @Autowired
     SparkProducerMysql sparkProducer;
-
+@Autowired
+SparkProducerCSV sparkProducerCSV;
     @RequestMapping("/")
     public String index() {
         return "Java Spring Boot Spark server running. Add the 'sparkpi' route to this URL to invoke the app.";
@@ -22,8 +23,12 @@ public class SparkController {
     @GetMapping("/sparkpi")
     public String sparkpi() {
         return sparkProducer.migrate();
+    }
 
 
-
+    @GetMapping("/sparkcsv")
+    public String migrate()
+    {
+        return sparkProducerCSV.migratefromcsv();
     }
 }

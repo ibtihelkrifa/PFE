@@ -1,0 +1,1 @@
+Missing collection name. Set via the 'spark.mongodb.output.uri' or 'spark.mongodb.output.collection' property

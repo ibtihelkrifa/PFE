@@ -17,8 +17,9 @@ public class SparkContextProvider {
     private SparkContextProvider(SparkProperties props) {
         this.sparkConf = new SparkConf().setAppName("JavaSpark").setMaster("local").set("spark.executor.memory","1g");
         this.sparkConf.setJars(new String[]{props.getJarFile()});
-       // this.sparkConf.set("spark.mongodb.input.uri", "mongodb://127.0.0.1/betbet");
-        //this.sparkConf.set("spark.mongodb.output.uri", "mongodb://127.0.0.1/betbet");
+        this.sparkConf.set("spark.mongodb.input.uri", "mongodb://127.0.0.1/bet.test6");
+        this.sparkConf.set("spark.mongodb.output.uri", "mongodb://127.0.0.1/bet.test6");
+        this.sparkConf.set("collection","test6");
         this.sparkContext = new JavaSparkContext(sparkConf);
 
     }
