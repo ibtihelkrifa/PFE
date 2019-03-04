@@ -15,6 +15,8 @@ public class SparkController {
     SparkProducerMysql sparkProducer;
 @Autowired
 SparkProducerCSV sparkProducerCSV;
+
+
     @RequestMapping("/")
     public String index() {
         return "Java Spring Boot Spark server running. Add the 'sparkpi' route to this URL to invoke the app.";

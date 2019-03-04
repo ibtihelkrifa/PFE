@@ -2,6 +2,14 @@ GET http://localhost:8081/sparkcsv
 Accept: */*
 Cache-Control: no-cache
 
+<> 2019-03-04T022233.200.txt
+
+###
+
+GET http://localhost:8081/sparkcsv
+Accept: */*
+Cache-Control: no-cache
+
 <> 2019-03-01T051517.200.txt
 
 ###
@@ -387,14 +395,6 @@ Accept: */*
 Cache-Control: no-cache
 
 <> 2019-02-28T044142.500.json
-
-###
-
-GET http://localhost:8081/sparkpi
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-02-28T044056.500.json
 
 ###
 
